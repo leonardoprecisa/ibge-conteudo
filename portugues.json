@@ -1,1 +1,58 @@
-
+[
+  {
+    "id": "portugues_extra_1",
+    "title": "Interpretação de textos",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Interpretação de textos</h3>\n<p>Ler e pegar o sentido real, não só as palavras. Atenção ao contexto e às entrelinhas.</p>\n<p class=\"ex\">Ex: \"O cachorro late alto\" → barulho forte.</p>\n<p class=\"ex\">Ex: \"O sol nasce todo dia\" → dia começa sempre.</p>\n<p class=\"q\">Q: O cachorro faz? a) Dorme b) Late → b</p>\n<p class=\"q\">Q: O sol faz? a) Dorme b) Nasce → b</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> Texto diz \"A chuva caiu forte e alagou a rua\". Significa? <br/>Resposta: Rua ficou cheia d'água → alternativa certa: alagamento.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "portugues_extra_2",
+    "title": "Figuras de linguagem",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Figuras de linguagem</h3>\n<p>Jeitos expressivos de falar: metáfora, comparação, hipérbole, ironia, metonímia.</p>\n<p class=\"ex\">Metáfora: \"Você é um sol\" → brilha muito (sem \"como\").</p>\n<p class=\"ex\">Comparação: \"Corre como um raio\" → muito rápido (usa \"como\").</p>\n<p class=\"ex\">Hipérbole: \"Chorou rios\" → exagero.</p>\n<p class=\"ex\">Ironia: \"Que bonito, chegou atrasado de novo!\" → crítica disfarçada.</p>\n<p class=\"q\">Q: \"Tempo voou\" é: a) Metáfora b) Soma → a</p>\n<p class=\"q\">Q: \"Chorou rios de lágrimas\" é: a) Hipérbole b) Verdade → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> \"Ele tem coração de pedra\". Figura? <br/>Resposta: Metáfora (insensível) → certa: metáfora.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "portugues_extra_3",
+    "title": "Morfologia — Classes gramaticais",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Morfologia — Classes gramaticais</h3>\n<p>Nomes das palavras e sua função na frase.</p>\n<p class=\"ex\">Substantivo: casa, menino (coisa/pessoa)</p>\n<p class=\"ex\">Verbo: correr, comer (ação)</p>\n<p class=\"ex\">Adjetivo: bonito, grande (descreve substantivo)</p>\n<p class=\"ex\">Advérbio: rápido, bem (modifica verbo/adjetivo)</p>\n<p class=\"ex\">Preposição: de, em, para (liga palavras)</p>\n<p class=\"q\">Q: \"Menino\" é: a) Verbo b) Substantivo → b</p>\n<p class=\"q\">Q: \"Rapidamente\" é: a) Advérbio b) Substantivo → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> \"A casa grande\" — \"grande\" é? <br/>Resposta: Adjetivo → certa.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "portugues_extra_4",
+    "title": "Coesão e coerência",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Coesão e coerência</h3>\n<p>Coesão = palavras que ligam (conectivos). Coerência = texto faz sentido lógico.</p>\n<p class=\"ex\">Ex: \"Comi bolo porque estava doce\" → causa conectada.</p>\n<p class=\"ex\">Ex: \"Choveu, portanto a rua ficou molhada\" → consequência lógica.</p>\n<p class=\"q\">Q: \"Estudou muito, portanto passou.\" Coerente? a) Sim b) Não → a</p>\n<p class=\"q\">Q: \"Corri pois estava atrasado\" certo? a) Sim b) Não → a</p>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "portugues_extra_5",
+    "title": "Crase e pontuação",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Crase e pontuação</h3>\n<p>Crase (à) = a + a (preposição + artigo). Pontuação organiza o sentido.</p>\n<p class=\"ex\">Ex: \"Vou à escola\" (vou a + a escola).</p>\n<p class=\"ex\">Ex: \"João, venha aqui!\" (vírgula = vocativo).</p>\n<p class=\"q\">Q: Certo? a) Vou a escola b) Vou à escola → b</p>\n<p class=\"q\">Q: Certo? a) Oi amigo b) Oi, amigo → b</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> \"Refiro-me ___ questão anterior\". Resposta: à (preposição a + artigo a) → certa.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "portugues_extra_6",
+    "title": "Sintaxe e concordância",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Sintaxe e concordância</h3>\n<p>Concordância verbal (sujeito-verbo) e nominal (substantivo-adjetivo).</p>\n<p class=\"ex\">Ex: \"Os meninos correm\" (plural + plural).</p>\n<p class=\"ex\">Ex: \"A menina é bonita\" (feminino + feminino).</p>\n<p class=\"q\">Q: Certo? a) Meninos corre b) Meninos correm → b</p>\n<p class=\"q\">Q: Certo? a) As casas são grandes b) As casas é grande → a</p>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "portugues_extra_7",
+    "title": "Tipos textuais",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Tipos textuais</h3>\n<p>Narração (conta história), Descrição (detalha), Dissertação (argumenta), Instrução (orienta).</p>\n<p class=\"ex\">Ex: \"Era uma vez...\" = narrativo.</p>\n<p class=\"ex\">Ex: \"Ingredientes: 2 ovos...\" = instrucional.</p>\n<p class=\"ex\">Ex: \"A desigualdade social no Brasil...\" = dissertativo.</p>\n<p class=\"q\">Q: \"Era uma vez\" é: a) Notícia b) Narrativo → b</p>\n<p class=\"q\">Q: \"Hoje no jornal\" é: a) Narrativo b) Jornalístico → b</p>\n</div>",
+    "questions": []
+  }
+]
