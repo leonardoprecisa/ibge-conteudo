@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBGE 2025 - Plataforma de Estudos</title>
+  <meta name="description" content="Plataforma de estudos para concurso IBGE 2025">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --fg: #0a0a0a;
+      --card: #ffffff;
+      --border: #e5e5e5;
+      --muted: #737373;
+      --accent: #f5f5f5;
+      --primary: #171717;
+      --primary-fg: #fafafa;
+      --header-bg: hsl(210, 45%, 35%);
+      --header-bg-secondary: hsl(210, 45%, 28%);
+      --resumo-bg: hsl(45, 80%, 95%);
+      --resumo-border: hsl(45, 70%, 70%);
+      --resumo-plus-bg: hsl(200, 80%, 95%);
+      --resumo-plus-border: hsl(200, 70%, 70%);
+
+      --resumo-btn-bg: hsl(210, 80%, 42%);
+      --resumo-btn-bg-hover: hsl(210, 80%, 36%);
+      --resumo-btn-fg: hsl(0, 0%, 100%);
+
+      --h-header: 60px;
+      --h-nav: 50px;
+      --h-voice: 46px;
+    }
+
+    .dark {
+      --bg: hsl(220, 13%, 13%);
+      --fg: hsl(220, 15%, 85%);
+      --card: hsl(215, 20%, 16%);
+      --border: hsl(220, 15%, 22%);
+      --muted: hsl(220, 10%, 60%);
+      --accent: hsl(215, 20%, 22%);
+      --primary: hsl(210, 40%, 45%);
+      --primary-fg: hsl(220, 15%, 95%);
+      --header-bg: hsl(215, 25%, 22%);
+      --header-bg-secondary: hsl(215, 25%, 18%);
+      --resumo-bg: hsl(45, 30%, 20%);
+      --resumo-border: hsl(45, 40%, 35%);
+      --resumo-plus-bg: hsl(200, 30%, 20%);
+      --resumo-plus-border: hsl(200, 40%, 35%);
+
+      --resumo-btn-bg: hsl(210, 70%, 50%);
+      --resumo-btn-bg-hover: hsl(210, 70%, 44%);
+      --resumo-btn-fg: hsl(0, 0%, 100%);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .font-small { font-size: 15px; }
+    .font-medium { font-size: 18px; }
+    .font-large { font-size: 21px; }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--h-header);
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      transition: top 0.3s ease;
+    }
+
+    .header.hidden {
+      top: calc(var(--h-header) * -1);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 15px;
+      gap: 8px;
+      height: 100%;
+    }
+
+    .header-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    .header .icon-btn {
+      color: #ffffff;
+    }
+
+    .header .icon-btn:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .dark .header-title {
+      color: var(--fg);
+    }
+
+    .dark .header .icon-btn {
+      color: var(--fg);
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .subject-nav-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 8px 8px 6px;
+      border-bottom: 1px solid var(--border);
+      background: var(--header-bg-secondary);
+      
+      position: fixed;
+      top: var(--h-header);
+      left: 0;
+      width: 100%;
+      height: var(--h-nav);
+      z-index: 99;
+      transition: top 0.3s ease;
+    }
+
+    .subject-nav-row.shifted {
+      top: 0;
+    }
+
+    .subject-select {
+      padding: 6px 8px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--fg);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      flex-shrink: 0;
+      max-width: 130px;
+    }
+
+    .icon-btn {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: transparent;
+      color: var(--fg);
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .icon-btn:hover {
+      background: var(--accent);
+    }
+
+    .icon-btn.active {
+      background: var(--primary);
+      color: var(--primary-fg);
+    }
+
+    .section-nav-container {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+      min-width: 0;
+      overflow: visible;
+    }
+
+    /* Chapters Dropdown - Novo estilo principal */
+    .chapters-dropdown {
+      position: relative;
+      flex: 1;
+      min-width: 0;
+      max-width: calc(100% - 10px);
+    }
+
+    .chapter-dropdown-toggle {
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--fg);
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .chapter-dropdown-toggle .chapter-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex: 1;
+    }
+
+    .chapter-dropdown-toggle .arrow {
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    .chapter-dropdown-toggle.open .arrow {
+      transform: rotate(180deg);
+    }
+
+    .chapter-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      margin-top: 4px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 200;
+      max-height: 250px;
+      overflow-y: auto;
+    }
+
+    .chapter-dropdown-menu.open {
+      display: block;
+    }
+
+    .chapter-dropdown-item {
+      padding: 10px 12px;
+      cursor: pointer;
+      font-size: 13px;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+      color: var(--fg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chapter-dropdown-item:last-child {
+      border-bottom: none;
+    }
+
+    .chapter-dropdown-item:hover {
+      background: var(--accent);
+    }
+
+    .chapter-dropdown-item.active {
+      background: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Voice button - sempre visível, nunca empurrado */
+    .nav-voice-btn {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #b8860b;
+      background: #daa520;
+      color: #1a1a1a;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: all 0.2s;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+
+    .nav-voice-btn.playing {
+      background: #b8860b;
+      color: #fff;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* Voice Control Bar */
+    .voice-control-bar {
+      display: none;
+      position: fixed;
+      top: calc(var(--h-header) + var(--h-nav));
+      left: 0;
+      right: 0;
+      height: var(--h-voice);
+      background: var(--header-bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 6px 12px;
+      z-index: 98;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      transition: top 0.3s ease;
+    }
+
+    .voice-control-bar.active {
+      display: flex;
+    }
+
+    .voice-control-bar.shifted {
+      top: var(--h-nav);
+    }
+
+    .voice-control-bar label {
+      font-size: 13px;
+      color: #ffffff;
+    }
+
+    .voice-control-bar .speed-select {
+      padding: 4px 8px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--bg);
+      color: var(--fg);
+      font-size: 12px;
+    }
+
+    .voice-control-bar .voice-stop-btn {
+      padding: 6px 16px;
+      border: none;
+      background: #ef4444;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    /* Reading Highlight */
+    .reading-highlight {
+      background-color: #fef08a !important;
+      color: #000000 !important;
+      border-radius: 2px;
+      transition: background-color 0.2s;
+    }
+
+    .dark .reading-highlight {
+      background-color: #854d0e !important;
+      color: #ffffff !important;
+    }
+
+    /* Main Content */
+    .main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 16px;
+      padding-bottom: 40px;
+      padding-top: calc(var(--h-header) + var(--h-nav) + 20px);
+    }
+
+    .section {
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 150px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 1.25em;
+      font-weight: 600;
+    }
+
+    .fav-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      color: var(--muted);
+    }
+
+    .fav-btn.active {
+      color: #f59e0b;
+    }
+
+    /* Resumo Button and Dropdown */
+    .resumo-container {
+      position: relative;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .resumo-btn {
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--resumo-btn-bg);
+      color: var(--resumo-btn-fg);
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .resumo-btn:hover {
+      background: var(--resumo-btn-bg-hover);
+    }
+
+    .resumo-btn .arrow {
+      transition: transform 0.2s;
+    }
+
+    .resumo-btn.open .arrow {
+      transform: rotate(180deg);
+    }
+
+    .resumo-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 4px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 200;
+      min-width: 160px;
+    }
+    .resumo-dropdown.open {
+      display: block;
+    }
+
+    .resumo-dropdown-item {
+      padding: 12px 16px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+      color: var(--fg);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .resumo-dropdown-item:first-child {
+      border-radius: 8px 8px 0 0;
+    }
+
+    .resumo-dropdown-item:last-child {
+      border-radius: 0 0 8px 8px;
+    }
+
+    .resumo-dropdown-item:hover {
+      background: var(--accent);
+    }
+
+    .resumo-dropdown-item .icon-resumo {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Resumo Panel */
+    .resumo-panel {
+      display: none;
+      margin-bottom: 16px;
+      padding: 14px;
+      border-radius: 8px;
+      animation: slideDown 0.3s ease;
+    }
+
+    .resumo-panel.open {
+      display: block;
+    }
+
+    .resumo-panel.type-resumo {
+      background: transparent;
+      border: 2px solid var(--resumo-border);
+    }
+
+    .resumo-panel.type-resumo-plus {
+      background: transparent;
+      border: 2px solid var(--resumo-plus-border);
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .resumo-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .resumo-panel-title {
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .resumo-panel-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--muted);
+      padding: 4px;
+    }
+
+    .resumo-panel-content {
+      line-height: 1.5;
+    }
+
+    .resumo-panel-content ul {
+      margin-left: 16px;
+      margin-top: 8px;
+    }
+
+    .resumo-panel-content li {
+      margin-bottom: 4px;
+    }
+
+    /* Content Styling */
+    .content p, .content ul, .content ol {
+      margin-bottom: 12px;
+    }
+
+    .content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+
+    .content th, .content td {
+      border: 1px solid var(--border);
+      padding: 8px;
+      text-align: center;
+    }
+
+    .content th {
+      background: var(--accent);
+    }
+
+    /* Quiz */
+    .quiz {
+      margin-top: 24px;
+      padding: 16px;
+      background: var(--accent);
+      border-radius: 8px;
+    }
+
+    .quiz-title {
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .quiz-option {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg);
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .quiz-option.selected {
+      border-color: var(--primary);
+    }
+
+    .quiz-option.correct {
+      border-color: #22c55e;
+      background: #dcfce7;
+    }
+
+    .quiz-option.wrong {
+      border-color: #ef4444;
+      background: #fee2e2;
+    }
+
+    .quiz-btn {
+      margin-top: 12px;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: var(--primary-fg);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Modals */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 200;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 20px;
+      padding-top: 10vh;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal {
+      background: var(--bg);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 500px;
+      max-height: 70vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-body {
+      padding: 16px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    .search-item, .fav-item {
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .font-btns {
+      display: flex;
+      gap: 2px;
+    }
+
+    .font-btn {
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--fg);
+    }
+
+    .font-btn.active {
+      background: var(--primary);
+      color: var(--primary-fg);
+    }
+
+    .icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    .icon-sm {
+      width: 16px;
+      height: 16px;
+    }
+  </style>
+</head>
+<body class="font-medium">
+
+  <header class="header" id="mainHeader">
+    <div class="header-content">
+      <span class="header-title">Concurso IBGE</span>
+      <div class="header-actions">
+        <button class="icon-btn" id="searchBtn"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></button>
+        <button class="icon-btn" id="favBtn"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></button>
+        <div class="font-btns">
+          <button class="font-btn" data-size="small">P</button>
+          <button class="font-btn active" data-size="medium">M</button>
+          <button class="font-btn" data-size="large">G</button>
+        </div>
+        <button class="icon-btn" id="themeBtn"><svg class="icon" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="subject-nav-row" id="subjectNavRow">
+    <select class="subject-select" id="subjectSelect"></select>
+    <div class="section-nav-container">
+      <div class="chapters-dropdown" id="chaptersDropdown">
+        <button class="chapter-dropdown-toggle" id="chapterDropdownToggle">
+          <span class="chapter-text" id="chapterText">Selecione...</span>
+          <svg class="arrow" width="10" height="6" viewBox="0 0 10 6" fill="currentColor"><path d="M1 1l4 4 4-4"/></svg>
+        </button>
+        <div class="chapter-dropdown-menu" id="chapterDropdownMenu"></div>
+      </div>
+    </div>
+    <button class="nav-voice-btn" id="navVoiceBtn">
+      <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+    </button>
+  </div>
+
+  <div class="voice-control-bar" id="voiceControlBar">
+    <label>Vel:</label>
+    <select class="speed-select" id="globalSpeedSelect">
+      <option value="0.5">0.5x</option>
+      <option value="0.75">0.75x</option>
+      <option value="1" selected>1x</option>
+      <option value="1.25">1.25x</option>
+      <option value="1.5">1.5x</option>
+      <option value="2">2x</option>
+    </select>
+    <button class="voice-stop-btn" id="globalStopBtn">Parar</button>
+  </div>
+
+  <main class="main" id="mainContent"></main>
+
+  <div class="modal-overlay" id="searchModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Buscar</h2>
+        <button class="modal-close" onclick="closeModal('searchModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="search-input" id="searchInput" placeholder="Digite para buscar...">
+        <div id="searchResults"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="favModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Favoritos</h2>
+        <button class="modal-close" onclick="closeModal('favModal')">&times;</button>
+      </div>
+      <div class="modal-body" id="favList"></div>
+    </div>
+  </div>
+
+  <script>
+    // ============ DATA COMPLETA EXTRAÍDA DA APOSTILA IBGE 2025 ============
+    
+const subjects = [
+  { id: "portugues", name: "Língua Portuguesa", shortName: "Português", sections: [] },
+  { id: "geografia", name: "Geografia", shortName: "Geografia", sections: [] },
+  { id: "logico", name: "Raciocínio Lógico", shortName: "Lógico", sections: [] },
+  { id: "informatica", name: "Informática", shortName: "Informática", sections: [] },
+  { id: "etica", name: "Ética", shortName: "Ética", sections: [] },
+  { id: "atualidades", name: "Atualidades", shortName: "Atualidades", sections: [] }
+];
+
+// ====== GitHub Pages remote loader (mesmo repo) ======
+async function loadSubjectFromGitHub(subjectId) {
+  const url = `./${subjectId}.json`;
+  const r = await fetch(url, { cache: 'no-store' });
+  if (!r.ok) throw new Error(`HTTP ${r.status} ao buscar ${url}`);
+  const data = await r.json();
+  const subject = subjects.find(s => s.id === subjectId);
+  if (!subject) throw new Error(`Matéria desconhecida: ${subjectId}`);
+  subject.sections = data;
+}
+
+// Expor para debug (opcional)
+window.subjects = subjects;
+window.loadSubjectFromGitHub = loadSubjectFromGitHub;
+
+function showLoadError(msg) {
+  let el = document.getElementById('loadErrorBanner');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'loadErrorBanner';
+    el.style.position = 'fixed';
+    el.style.left = '10px';
+    el.style.right = '10px';
+    el.style.bottom = '10px';
+    el.style.zIndex = '9999';
+    el.style.padding = '10px 12px';
+    el.style.borderRadius = '10px';
+    el.style.border = '1px solid rgba(0,0,0,0.15)';
+    el.style.background = 'rgba(239,68,68,0.95)';
+    el.style.color = 'white';
+    el.style.fontSize = '14px';
+    el.style.boxShadow = '0 8px 18px rgba(0,0,0,0.25)';
+    el.style.cursor = 'pointer';
+    el.title = 'Toque para fechar';
+    el.addEventListener('click', () => el.remove());
+    document.body.appendChild(el);
+  }
+  el.textContent = msg;
+}
+
+
+
+
+    // ============ STATE ============
+    let state = loadState();
+    let currentSubjectId = subjects[0].id;
+    let activeSectionId = null;
+    let openResumoSections = {};
+
+    function loadState() {
+      const saved = localStorage.getItem('ibge-study-state');
+      return saved ? JSON.parse(saved) : { readSections: {}, favorites: {}, quizScores: {}, fontSize: 'medium', theme: 'light' };
+    }
+
+    function saveState() {
+      localStorage.setItem('ibge-study-state', JSON.stringify(state));
+    }
+
+    // ============ THEME & FONT ============
+    function applyTheme() {
+      document.body.classList.toggle('dark', state.theme === 'dark');
+      updateThemeIcon();
+    }
+
+    function updateThemeIcon() {
+      const icon = document.getElementById('themeIcon');
+      icon.innerHTML = state.theme === 'dark' 
+        ? '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>' 
+        : '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>';
+    }
+
+    function toggleTheme() {
+      state.theme = state.theme === 'light' ? 'dark' : 'light';
+      saveState();
+      applyTheme();
+    }
+
+    function setFontSize(size) {
+      state.fontSize = size;
+      saveState();
+      document.body.className = `font-${size}`;
+      if (state.theme === 'dark') document.body.classList.add('dark');
+      updateFontButtons();
+    }
+
+    function updateFontButtons() {
+      document.querySelectorAll('.font-btn').forEach(btn => 
+        btn.classList.toggle('active', btn.dataset.size === state.fontSize)
+      );
+    }
+
+    // ============ VOICE READING ============
+    let currentSpeech = null;
+    let isPaused = false;
+    let speechRate = 1.0;
+    let currentReadingSectionId = null;
+    let sentencesToRead = [];
+    let currentSentenceIndex = 0;
+
+    function prepareElementForReading(rootEl) {
+      if (!rootEl || rootEl.dataset.prepared === "true") return;
+
+      const walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      let node;
+      while (node = walker.nextNode()) nodes.push(node);
+
+      nodes.forEach(textNode => {
+        const text = textNode.textContent;
+        const parts = text.split(/([.!?]+(?:\s|$))/g);
+
+        if (parts.length > 1) {
+          const fragment = document.createDocumentFragment();
+          parts.forEach(part => {
+            if (part.trim().length > 0) {
+              const span = document.createElement('span');
+              span.className = 'voice-sentence';
+              span.textContent = part;
+              fragment.appendChild(span);
+            } else {
+              fragment.appendChild(document.createTextNode(part));
+            }
+          });
+          textNode.parentNode.replaceChild(fragment, textNode);
+        } else if (text.trim().length > 0) {
+          const span = document.createElement('span');
+          span.className = 'voice-sentence';
+          span.textContent = text;
+          textNode.parentNode.replaceChild(span, textNode);
+        }
+      });
+
+      rootEl.dataset.prepared = "true";
+    }
+
+    function prepareSectionForReading(sectionId) {
+      const contentEl = document.querySelector(`#section-${sectionId} .content`);
+      prepareElementForReading(contentEl);
+
+      const resumoPanel = document.getElementById(`resumo-panel-${sectionId}`);
+      if (resumoPanel && resumoPanel.classList.contains('open')) {
+        const resumoContentEl = document.getElementById(`resumo-panel-content-${sectionId}`);
+        prepareElementForReading(resumoContentEl);
+      }
+    }
+
+    function startReading(sectionId) {
+      stopReading();
+      prepareSectionForReading(sectionId);
+
+      const sectionEl = document.getElementById(`section-${sectionId}`);
+      const roots = [];
+
+      const resumoPanel = document.getElementById(`resumo-panel-${sectionId}`);
+      if (resumoPanel && resumoPanel.classList.contains('open')) {
+        const resumoContentEl = document.getElementById(`resumo-panel-content-${sectionId}`);
+        if (resumoContentEl) roots.push(resumoContentEl);
+      }
+
+      const contentEl = sectionEl?.querySelector('.content');
+      if (contentEl) roots.push(contentEl);
+
+      const spans = roots.flatMap(el => Array.from(el.querySelectorAll('.voice-sentence')));
+      sentencesToRead = spans;
+
+      currentReadingSectionId = sectionId;
+      currentSentenceIndex = 0;
+
+      showVoiceControlBar();
+      updateVoiceButtonIcon(true);
+      speakSentence();
+    }
+
+    function speakSentence() {
+      if (currentSentenceIndex >= sentencesToRead.length) {
+        stopReading();
+        return;
+      }
+
+      const targetSpan = sentencesToRead[currentSentenceIndex];
+      const text = targetSpan.textContent.trim();
+      
+      if (text.length < 1) {
+        currentSentenceIndex++;
+        speakSentence();
+        return;
+      }
+
+      const audioText = text.replace(/\./g, '');
+
+      targetSpan.classList.add('reading-highlight');
+      targetSpan.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      currentSpeech = new SpeechSynthesisUtterance(audioText);
+      currentSpeech.lang = 'pt-BR';
+      currentSpeech.rate = speechRate;
+      currentSpeech.onend = () => {
+        targetSpan.classList.remove('reading-highlight');
+        if (!isPaused) {
+          currentSentenceIndex++;
+          speakSentence();
+        }
+      };
+
+      currentSpeech.onerror = () => stopReading();
+      window.speechSynthesis.speak(currentSpeech);
+    }
+
+    function stopReading() {
+      window.speechSynthesis.cancel();
+      document.querySelectorAll('.reading-highlight').forEach(el => el.classList.remove('reading-highlight'));
+      isPaused = false;
+      currentReadingSectionId = null;
+      updateVoiceButtonIcon(false);
+      hideVoiceControlBar();
+    }
+
+    function toggleReading() {
+      const sectionId = activeSectionId || subjects.find(s => s.id === currentSubjectId).sections[0].id;
+      if (currentReadingSectionId === sectionId) {
+        if (window.speechSynthesis.speaking && !isPaused) {
+          window.speechSynthesis.pause();
+          isPaused = true;
+          updateVoiceButtonIcon(false);
+        } else {
+          window.speechSynthesis.resume();
+          isPaused = false;
+          updateVoiceButtonIcon(true);
+        }
+      } else {
+        startReading(sectionId);
+      }
+    }
+
+    function updateVoiceButtonIcon(playing) {
+      const btn = document.getElementById('navVoiceBtn');
+      btn.classList.toggle('playing', playing);
+      btn.innerHTML = playing 
+        ? '<svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>'
+        : '<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>';
+    }
+
+    function showVoiceControlBar() {
+      document.getElementById('voiceControlBar').classList.add('active');
+    }
+
+    function hideVoiceControlBar() {
+      document.getElementById('voiceControlBar').classList.remove('active');
+    }
+
+    // ============ NAVIGATION & RENDER ============
+    function renderSubjectSelect() {
+      const select = document.getElementById('subjectSelect');
+      select.innerHTML = subjects.map(s => 
+        `<option value="${s.id}" ${s.id === currentSubjectId ? 'selected' : ''}>${s.shortName}</option>`
+      ).join('');
+    }
+
+    function updateChapterDropdown() {
+      const subject = subjects.find(s => s.id === currentSubjectId);
+      if (!subject) return;
+      
+      const menu = document.getElementById('chapterDropdownMenu');
+      const textEl = document.getElementById('chapterText');
+      
+      // Populate all chapters in the dropdown
+      let menuHtml = '';
+      for (let i = 0; i < subject.sections.length; i++) {
+        const s = subject.sections[i];
+        const isActive = activeSectionId === s.id ? 'active' : '';
+        menuHtml += `<button class="chapter-dropdown-item ${isActive}" data-section="${s.id}">${s.title}</button>`;
+      }
+      menu.innerHTML = menuHtml;
+      
+      // Update the toggle text
+      const activeSection = subject.sections.find(s => s.id === activeSectionId) || subject.sections[0];
+      if (activeSection) {
+        textEl.textContent = activeSection.title;
+      }
+    }
+
+    function renderContent() {
+      const subject = subjects.find(s => s.id === currentSubjectId);
+      const main = document.getElementById('mainContent');
+      
+      main.innerHTML = subject.sections.map(section => `
+        <article class="section" id="section-${section.id}">
+          <div class="section-header">
+            <h2 class="section-title">${section.title}</h2>
+            <button class="fav-btn ${state.favorites[`${currentSubjectId}-${section.id}`] ? 'active' : ''}" onclick="toggleFavorite('${currentSubjectId}', '${section.id}')">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </button>
+          </div>
+          
+          ${section.resumo ? `
+          <div class="resumo-container">
+            <button class="resumo-btn" onclick="toggleResumoDropdown('${section.id}')">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Resumo
+              <svg class="arrow" width="10" height="6" viewBox="0 0 10 6" fill="currentColor"><path d="M1 1l4 4 4-4"/></svg>
+            </button>
+            <div class="resumo-dropdown" id="resumo-dropdown-${section.id}">
+              <button class="resumo-dropdown-item" onclick="showResumo('${section.id}', 'resumo')">
+                <svg class="icon-resumo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                1 - Resumo
+              </button>
+              <button class="resumo-dropdown-item" onclick="showResumo('${section.id}', 'resumo-plus')">
+                <svg class="icon-resumo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+                2 - Resumo+
+              </button>
+            </div>
+          </div>
+          
+          <div class="resumo-panel" id="resumo-panel-${section.id}">
+            <div class="resumo-panel-header">
+              <span class="resumo-panel-title" id="resumo-panel-title-${section.id}">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                Resumo
+              </span>
+              <button class="resumo-panel-close" onclick="closeResumo('${section.id}')">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </div>
+            <div class="resumo-panel-content" id="resumo-panel-content-${section.id}"></div>
+          </div>
+          ` : ''}
+          
+          <div class="content">${section.content}</div>
+          ${section.questions ? `<div class="quiz" id="quiz-${section.id}"><button class="quiz-btn" onclick="startQuiz('${section.id}')">Iniciar Quiz</button></div>` : ''}
+        </article>
+      `).join('');
+      
+      if (!activeSectionId) activeSectionId = subject.sections[0].id;
+      updateChapterDropdown();
+    }
+
+    // ============ RESUMO FUNCTIONS ============
+    function toggleResumoDropdown(sectionId) {
+      const dropdown = document.getElementById(`resumo-dropdown-${sectionId}`);
+      const btn = dropdown.previousElementSibling;
+      
+      // Close all other dropdowns
+      document.querySelectorAll('.resumo-dropdown.open').forEach(d => {
+        if (d.id !== `resumo-dropdown-${sectionId}`) {
+          d.classList.remove('open');
+          d.previousElementSibling.classList.remove('open');
+        }
+      });
+      
+      dropdown.classList.toggle('open');
+      btn.classList.toggle('open');
+    }
+
+    function showResumo(sectionId, type) {
+      const subject = subjects.find(s => s.id === currentSubjectId);
+      const section = subject.sections.find(s => s.id === sectionId);
+      const panel = document.getElementById(`resumo-panel-${sectionId}`);
+      const title = document.getElementById(`resumo-panel-title-${sectionId}`);
+      const content = document.getElementById(`resumo-panel-content-${sectionId}`);
+      
+      // Close dropdown
+      const dropdown = document.getElementById(`resumo-dropdown-${sectionId}`);
+      dropdown.classList.remove('open');
+      dropdown.previousElementSibling.classList.remove('open');
+      
+      // Set content based on type
+      panel.className = 'resumo-panel open';
+      if (type === 'resumo') {
+        panel.classList.add('type-resumo');
+        title.innerHTML = `<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg> Resumo`;
+        content.innerHTML = section.resumo || 'Resumo não disponível.';
+      } else {
+        panel.classList.add('type-resumo-plus');
+        title.innerHTML = `<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg> Resumo+`;
+        content.innerHTML = section.resumoPlus || 'Resumo+ não disponível.';
+      }
+
+      // Ensure new resumo content is readable by voice
+      content.dataset.prepared = "false";
+      prepareElementForReading(content);
+
+      openResumoSections[sectionId] = type;
+
+      // If user is currently listening to this chapter, restart reading including the resumo
+      if (currentReadingSectionId === sectionId && window.speechSynthesis.speaking) {
+        startReading(sectionId);
+      }
+    }
+
+    function closeResumo(sectionId) {
+      const panel = document.getElementById(`resumo-panel-${sectionId}`);
+      panel.classList.remove('open', 'type-resumo', 'type-resumo-plus');
+      delete openResumoSections[sectionId];
+    }
+
+    // ============ CHAPTER DROPDOWN ============
+    function toggleChapterDropdown() {
+      const toggle = document.getElementById('chapterDropdownToggle');
+      const menu = document.getElementById('chapterDropdownMenu');
+      
+      toggle.classList.toggle('open');
+      menu.classList.toggle('open');
+    }
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+      // Chapter dropdown
+      const chapterDropdown = document.getElementById('chaptersDropdown');
+      if (!chapterDropdown.contains(e.target)) {
+        document.getElementById('chapterDropdownToggle').classList.remove('open');
+        document.getElementById('chapterDropdownMenu').classList.remove('open');
+      }
+      
+      // Resumo dropdowns
+      if (!e.target.closest('.resumo-container')) {
+        document.querySelectorAll('.resumo-dropdown.open').forEach(d => {
+          d.classList.remove('open');
+          d.previousElementSibling.classList.remove('open');
+        });
+      }
+    });
+
+    // ============ SCROLL & UTILS ============
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      const header = document.getElementById('mainHeader');
+      const subjectNav = document.getElementById('subjectNavRow');
+      const voiceBar = document.getElementById('voiceControlBar');
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        header.classList.add('hidden');
+        subjectNav.classList.add('shifted');
+        voiceBar.classList.add('shifted');
+      } else {
+        header.classList.remove('hidden');
+        subjectNav.classList.remove('shifted');
+        voiceBar.classList.remove('shifted');
+      }
+      
+      lastScrollY = currentScrollY;
+
+      // Highlight active section
+      const subject = subjects.find(s => s.id === currentSubjectId);
+      subject.sections.forEach(sec => {
+        const el = document.getElementById(`section-${sec.id}`);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < 200 && rect.bottom > 200) {
+            if (activeSectionId !== sec.id) {
+              activeSectionId = sec.id;
+              updateChapterDropdown();
+            }
+          }
+        }
+      });
+    });
+
+    function toggleFavorite(subId, secId) {
+      const key = `${subId}-${secId}`;
+      state.favorites[key] = !state.favorites[key];
+      saveState();
+      renderContent();
+    }
+
+    function openModal(id) {
+      document.getElementById(id).classList.add('open');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('open');
+    }
+
+    // ============ QUIZ ============
+    function startQuiz(sectionId) {
+      const subject = subjects.find(s => s.id === currentSubjectId);
+      const section = subject.sections.find(s => s.id === sectionId);
+      const quizEl = document.getElementById(`quiz-${sectionId}`);
+      
+      if (!section.questions || section.questions.length === 0) return;
+      
+      const q = section.questions[0];
+      quizEl.innerHTML = `
+        <div class="quiz-title">${q.question}</div>
+        <div class="quiz-options">
+          ${q.options.map((opt, i) => `
+            <button class="quiz-option" onclick="selectOption('${sectionId}', ${i})">${opt}</button>
+          `).join('')}
+        </div>
+        <button class="quiz-btn" onclick="checkAnswer('${sectionId}', ${q.correctAnswer})">Verificar Resposta</button>
+      `;
+    }
+
+    function selectOption(sectionId, index) {
+      const quizEl = document.getElementById(`quiz-${sectionId}`);
+      quizEl.querySelectorAll('.quiz-option').forEach((btn, i) => {
+        btn.classList.toggle('selected', i === index);
+      });
+      quizEl.dataset.selected = index;
+    }
+
+    function checkAnswer(sectionId, correctIndex) {
+      const quizEl = document.getElementById(`quiz-${sectionId}`);
+      const selected = parseInt(quizEl.dataset.selected);
+      
+      if (isNaN(selected)) return;
+      
+      quizEl.querySelectorAll('.quiz-option').forEach((btn, i) => {
+        btn.classList.remove('selected');
+        if (i === correctIndex) btn.classList.add('correct');
+        else if (i === selected) btn.classList.add('wrong');
+      });
+    }
+
+    // ============ INITIALIZATION ============
+    document.getElementById('subjectSelect').addEventListener('change', async (e) => {
+      currentSubjectId = e.target.value;
+      activeSectionId = null;
+      stopReading();
+
+      try {
+        await loadSubjectFromGitHub(currentSubjectId);
+        renderContent();
+      } catch (err) {
+        console.error(err);
+        showLoadError('Falha ao carregar: ' + currentSubjectId + ' — ' + (err && err.message ? err.message : err));
+      }
+    });
+
+    document.getElementById('chapterDropdownToggle').addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleChapterDropdown();
+    });
+
+    document.getElementById('chapterDropdownMenu').addEventListener('click', (e) => {
+      if (e.target.dataset.section) {
+        activeSectionId = e.target.dataset.section;
+        updateChapterDropdown();
+        document.getElementById('chapterDropdownToggle').classList.remove('open');
+        document.getElementById('chapterDropdownMenu').classList.remove('open');
+        document.getElementById(`section-${activeSectionId}`).scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    document.getElementById('themeBtn').addEventListener('click', toggleTheme);
+    document.querySelectorAll('.font-btn').forEach(btn => btn.addEventListener('click', () => setFontSize(btn.dataset.size)));
+    document.getElementById('navVoiceBtn').addEventListener('click', toggleReading);
+    document.getElementById('globalStopBtn').addEventListener('click', stopReading);
+    document.getElementById('globalSpeedSelect').addEventListener('change', (e) => {
+      speechRate = parseFloat(e.target.value);
+      if (currentReadingSectionId) startReading(currentReadingSectionId);
+    });
+
+    document.getElementById('searchBtn').addEventListener('click', () => openModal('searchModal'));
+    document.getElementById('favBtn').addEventListener('click', () => openModal('favModal'));
+
+    async function init() {
+      applyTheme();
+      setFontSize(state.fontSize);
+      renderSubjectSelect();
+
+      currentSubjectId = "portugues";
+      subjectSelect.value = "portugues";
+
+      try {
+        await loadSubjectFromGitHub(currentSubjectId);
+        renderContent();
+      } catch (err) {
+        console.error(err);
+        showLoadError('Não consegui carregar Português — ' + (err && err.message ? err.message : err));
+      }
+    }
+    init().catch(console.error);
+  </script>
+</body>
+</html>
