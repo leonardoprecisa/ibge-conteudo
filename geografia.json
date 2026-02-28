@@ -1,1 +1,50 @@
-
+[
+  {
+    "id": "geografia_extra_1",
+    "title": "Cartografia básica",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Cartografia básica</h3>\n<p>Mapas representam a realidade. Escala = relação entre mapa e realidade.</p>\n<p class=\"ex\">Ex: Escala 1:100.000 → 1cm no mapa = 1km real.</p>\n<p class=\"ex\">Ex: Legenda explica os símbolos do mapa.</p>\n<p class=\"q\">Q: Escala serve para? a) Medir distância real b) Colorir → a</p>\n<p class=\"q\">Q: Latitude e longitude servem para? a) Localizar pontos b) Pintar → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> Qual escala mostra mais detalhes: 1:1.000 ou 1:1.000.000? <br/>Resposta: 1:1.000 (escala grande = mais detalhes).</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "geografia_extra_2",
+    "title": "Aspectos físicos e população brasileira",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Aspectos físicos e população brasileira</h3>\n<p>Relevo, clima, vegetação e hidrografia. Sudeste é a região mais populosa.</p>\n<p class=\"ex\">Ex: Amazônia = maior bacia hidrográfica do mundo.</p>\n<p class=\"ex\">Ex: Sudeste concentra ~42% da população.</p>\n<p class=\"ex\">Ex: Clima tropical predomina no Brasil.</p>\n<p class=\"q\">Q: Mais populosa? a) Norte b) Sudeste → b</p>\n<p class=\"q\">Q: Maior rio? a) Amazonas b) Tietê → a</p>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "geografia_extra_3",
+    "title": "Organização agrária",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Organização agrária</h3>\n<p>Estrutura fundiária do Brasil: latifúndios × minifúndios. Agronegócio × agricultura familiar.</p>\n<p class=\"ex\">Ex: Agronegócio = soja, carne (exportação).</p>\n<p class=\"ex\">Ex: Agricultura familiar = 70% dos alimentos consumidos no Brasil.</p>\n<p class=\"ex\">Ex: Reforma agrária = distribuição de terras improdutivas.</p>\n<p class=\"q\">Q: Quem produz mais alimentos para mesa do brasileiro? a) Agronegócio b) Agricultura familiar → b</p>\n<p class=\"q\">Q: Latifúndio é? a) Terra grande b) Terra pequena → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> O que é concentração fundiária? <br/>Resposta: Poucos donos com muita terra → gera desigualdade no campo.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "geografia_extra_4",
+    "title": "Divisão regional do Brasil",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Divisão regional do Brasil</h3>\n<p>5 regiões oficiais (IBGE): Norte, Nordeste, Centro-Oeste, Sudeste, Sul.</p>\n<p class=\"ex\">Ex: Norte = maior em área (Amazônia).</p>\n<p class=\"ex\">Ex: Nordeste = 9 estados, maior número de estados.</p>\n<p class=\"ex\">Ex: Centro-Oeste = agronegócio forte (soja, gado).</p>\n<p class=\"q\">Q: Quantas regiões oficiais? a) 5 b) 7 → a</p>\n<p class=\"q\">Q: Região mais extensa? a) Norte b) Sul → a</p>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "geografia_extra_5",
+    "title": "Dinâmica demográfica",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Dinâmica demográfica</h3>\n<p>Transição demográfica: queda na natalidade e mortalidade. Envelhecimento da população.</p>\n<p class=\"ex\">Ex: Taxa de fecundidade brasileira caiu de 6 (1960) para ~1,6 (2022).</p>\n<p class=\"ex\">Ex: Expectativa de vida subiu para ~76 anos.</p>\n<p class=\"ex\">Ex: Pirâmide etária está ficando mais larga no topo.</p>\n<p class=\"q\">Q: A população brasileira está? a) Envelhecendo b) Rejuvenescendo → a</p>\n<p class=\"q\">Q: Transição demográfica = queda em? a) Natalidade e mortalidade b) Só mortalidade → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> O que significa bônus demográfico? <br/>Resposta: Momento em que a população em idade de trabalhar é maior que dependentes (crianças e idosos).</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "geografia_extra_6",
+    "title": "Atividades econômicas",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Atividades econômicas</h3>\n<p>Setores: primário (agro), secundário (indústria), terciário (serviços). Terciário é o maior do PIB brasileiro.</p>\n<p class=\"ex\">Ex: Setor primário = agricultura, pecuária, mineração.</p>\n<p class=\"ex\">Ex: Setor terciário = comércio, saúde, educação (~70% do PIB).</p>\n<p class=\"ex\">Ex: Indústria concentrada no Sudeste (SP, MG, RJ).</p>\n<p class=\"q\">Q: Maior setor do PIB? a) Primário b) Terciário → b</p>\n<p class=\"q\">Q: Soja é setor? a) Primário b) Terciário → a</p>\n</div>",
+    "questions": []
+  }
+]
