@@ -1,1 +1,50 @@
-
+[
+  {
+    "id": "logico_extra_1",
+    "title": "Lógica proposicional",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Lógica proposicional</h3>\n<p>Proposições são frases que podem ser verdadeiras (V) ou falsas (F). Conectivos: E (∧), OU (∨), SE...ENTÃO (→), NÃO (~).</p>\n<p class=\"ex\">Ex: \"Chove E faz frio\" → só V se ambas forem V.</p>\n<p class=\"ex\">Ex: \"Chove OU faz frio\" → F só se ambas forem F.</p>\n<p class=\"ex\">Ex: \"SE chove, ENTÃO levo guarda-chuva\" → F só quando V→F.</p>\n<p class=\"q\">Q: \"p E q\" é F quando? a) p=V, q=F b) p=V, q=V → a</p>\n<p class=\"q\">Q: Negação de \"p E q\"? a) ~p OU ~q b) ~p E ~q → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> \"Se estudo, passo.\" Quando é falso? <br/>Resposta: Só quando estudo (V) e NÃO passo (F). V→F = F.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "logico_extra_2",
+    "title": "Porcentagem e regra de três",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Porcentagem e regra de três</h3>\n<p>Porcentagem = parte de 100. Regra de três = proporção entre grandezas.</p>\n<p class=\"ex\">Ex: 50% de 200 = 100.</p>\n<p class=\"ex\">Ex: Se 3 camisas = R$90, 5 camisas = R$150 (regra de três).</p>\n<p class=\"q\">Q: 25% de 80? a) 20 b) 40 → a</p>\n<p class=\"q\">Q: 10% de 350? a) 35 b) 70 → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> Um produto de R$200 teve 15% de desconto. Novo preço? <br/>200 × 0,15 = 30. Novo preço: 200 - 30 = R$170.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "logico_extra_3",
+    "title": "Probabilidade e contagem",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Probabilidade e contagem</h3>\n<p>Probabilidade = casos favoráveis ÷ casos totais. Contagem = multiplicação de possibilidades.</p>\n<p class=\"ex\">Ex: Dado: chance de sair 3 = 1/6.</p>\n<p class=\"ex\">Ex: 3 camisas × 2 calças = 6 combinações.</p>\n<p class=\"ex\">Ex: Moeda: chance de cara = 1/2 = 50%.</p>\n<p class=\"q\">Q: Chance de sair par num dado? a) 3/6 b) 1/6 → a</p>\n<p class=\"q\">Q: 4 sabores × 3 coberturas = ? combinações a) 7 b) 12 → b</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> Saco com 5 bolas vermelhas e 3 azuis. Chance de pegar azul? <br/>3/8 = 37,5%.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "logico_extra_4",
+    "title": "Operações e conjuntos",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Operações e conjuntos</h3>\n<p>Conjuntos: União (∪), Interseção (∩), Diferença. Diagramas de Venn ajudam a visualizar.</p>\n<p class=\"ex\">Ex: A = {1,2,3}, B = {2,3,4}. A ∩ B = {2,3}.</p>\n<p class=\"ex\">Ex: A ∪ B = {1,2,3,4}.</p>\n<p class=\"ex\">Ex: Total = A + B - (A∩B) (fórmula da inclusão-exclusão).</p>\n<p class=\"q\">Q: A∩B significa? a) Elementos em comum b) Todos → a</p>\n<p class=\"q\">Q: {1,2} ∪ {2,3} = ? a) {1,2,3} b) {2} → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> 30 alunos gostam de futebol, 20 de vôlei, 10 de ambos. Quantos no total? <br/>30 + 20 - 10 = 40 alunos.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "logico_extra_5",
+    "title": "Diagramas e tabela-verdade",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Diagramas e tabela-verdade</h3>\n<p>Tabela-verdade mostra todas as combinações de V e F. Diagramas lógicos organizam informações.</p>\n<p class=\"ex\">Ex: p→q: V V=V, V F=F, F V=V, F F=V.</p>\n<p class=\"ex\">Ex: \"Todo A é B\" = diagrama com A dentro de B.</p>\n<p class=\"q\">Q: Quantas linhas na tabela com 2 proposições? a) 4 b) 8 → a</p>\n<p class=\"q\">Q: \"Todo gato é animal\" = ? a) Gato dentro de animal b) Animal dentro de gato → a</p>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "logico_extra_6",
+    "title": "Proporcionalidade",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Proporcionalidade</h3>\n<p>Grandezas diretamente proporcionais (crescem juntas) ou inversamente proporcionais (uma cresce, outra diminui).</p>\n<p class=\"ex\">Ex: Mais horas trabalhando → mais salário (direta).</p>\n<p class=\"ex\">Ex: Mais trabalhadores → menos tempo para obra (inversa).</p>\n<p class=\"q\">Q: Velocidade × tempo (distância fixa)? a) Direta b) Inversa → b</p>\n<p class=\"q\">Q: Preço × quantidade? a) Direta b) Inversa → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> 4 pedreiros fazem obra em 10 dias. 8 pedreiros fazem em quantos dias? <br/>Inversa: 4×10 = 8×x → x = 5 dias.</div>\n</div>",
+    "questions": []
+  }
+]
