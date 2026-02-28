@@ -812,6 +812,28 @@ const subjects = [
   { id: "atualidades", name: "Atualidades", shortName: "Atualidades", sections: [] }
 ];
 
+// ====== GitHub Pages remote loader (same repo) ======
+async function loadSubjectFromGitHub(subjectId) {
+  const url = `./${subjectId}.json`;
+  const r = await fetch(url, { cache: 'no-store' });
+  if (!r.ok) throw new Error(`HTTP ${r.status} ao buscar ${url}`);
+  const data = await r.json();
+  const subject = subjects.find(s => s.id === subjectId);
+  if (!subject) throw new Error(`Matéria desconhecida: ${subjectId}`);
+  subject.sections = data;
+}
+
+// Expõe algumas coisas para debug no console
+window.subjects = subjects;
+window.loadSubjectFromGitHub = loadSubjectFromGitHub;
+
+// Mostra erros de JS (ajuda no celular)
+window.addEventListener('error', (ev) => {
+  console.error('JS error:', ev.error || ev.message);
+});
+
+
+
 
     // ============ STATE ============
     let state = loadState();
@@ -1234,7 +1256,6 @@ const subjects = [
       state.favorites[key] = !state.favorites[key];
       saveState();
       renderContent();
-    });
     }
 
     function openModal(id) {
@@ -1287,15 +1308,20 @@ const subjects = [
     }
 
     // ============ INITIALIZATION ============
-    document.getElementById('subjectSelect.addEventListener('change', async (e) => {
-  currentSubjectId = e.target.value;
-  activeSectionId = null;
-  stopReading();
+    document.getElementById('subjectSelect').addEventListener('change', async (e) => {
+      currentSubjectId = e.target.value;
+      activeSectionId = null;
+      stopReading();
 
-  await loadSubjectFromGitHub(currentSubjectId);
-
-  renderContent();
-});
+      try {
+        await loadSubjectFromGitHub(currentSubjectId);
+        renderContent();
+      } catch (err) {
+        console.error(err);
+        alert('Falha ao carregar a matéria: ' + currentSubjectId + '
+' + (err && err.message ? err.message : err));
+      }
+    });
 
     document.getElementById('chapterDropdownToggle').addEventListener('click', (e) => {
       e.stopPropagation();
@@ -1324,37 +1350,24 @@ const subjects = [
     document.getElementById('searchBtn').addEventListener('click', () => openModal('searchModal'));
     document.getElementById('favBtn').addEventListener('click', () => openModal('favModal'));
 
-    
+    async function init() {
+      applyTheme();
+      setFontSize(state.fontSize);
+      renderSubjectSelect();
 
-// ====== Carregamento remoto via GitHub (APP PURO) ======
-async function loadSubjectFromGitHub(subjectId) {
-  try {
-    const baseURL = "https://leonardoprecisa.github.io/ibge-conteudo/";
-    const response = await fetch(baseURL + subjectId + ".json");
-    const data = await response.json();
+      currentSubjectId = "portugues";
+      subjectSelect.value = "portugues";
 
-    const subject = subjects.find(s => s.id === subjectId);
-    subject.sections = data;
-  } catch (error) {
-    console.error("Erro ao carregar conteúdo remoto:", error);
-  }
-}
-
-
-async function init() {
-  applyTheme();
-  setFontSize(state.fontSize);
-  renderSubjectSelect();
-
-  currentSubjectId = "portugues";
-  subjectSelect.value = "portugues";
-
-  await loadSubjectFromGitHub(currentSubjectId);
-
-  renderContent();
-}
-
-    init();
+      try {
+        await loadSubjectFromGitHub(currentSubjectId);
+        renderContent();
+      } catch (err) {
+        console.error(err);
+        alert('Não consegui carregar Português.
+' + (err && err.message ? err.message : err));
+      }
+    }
+    init().catch(console.error);
   </script>
 </body>
 </html>
