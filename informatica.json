@@ -1,1 +1,42 @@
-
+[
+  {
+    "id": "informatica_extra_1",
+    "title": "Sistemas operacionais",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Sistemas operacionais</h3>\n<p>SO gerencia o computador. Principais: Windows, Linux, macOS. Interface gráfica × linha de comando.</p>\n<p class=\"ex\">Ex: Windows = mais usado em desktops, interface gráfica com Menu Iniciar.</p>\n<p class=\"ex\">Ex: Linux = gratuito, código aberto, usado em servidores.</p>\n<p class=\"ex\">Ex: Gerenciador de Tarefas (Ctrl+Shift+Esc) mostra programas abertos.</p>\n<p class=\"q\">Q: SO gratuito e código aberto? a) Windows b) Linux → b</p>\n<p class=\"q\">Q: Ctrl+Alt+Del serve para? a) Desligar monitor b) Gerenciar tarefas → b</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> Qual a função do sistema operacional? <br/>Resposta: Gerenciar hardware e software, servindo de ponte entre o usuário e a máquina.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "informatica_extra_2",
+    "title": "Navegadores de internet",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Navegadores de internet</h3>\n<p>Programas para acessar a web: Chrome, Firefox, Edge. Conceitos: URL, HTTP/HTTPS, cookies, abas.</p>\n<p class=\"ex\">Ex: HTTPS = conexão segura (cadeado na barra).</p>\n<p class=\"ex\">Ex: Ctrl+T = nova aba; Ctrl+W = fecha aba.</p>\n<p class=\"ex\">Ex: Modo anônimo (Ctrl+Shift+N) não salva histórico.</p>\n<p class=\"q\">Q: HTTPS é mais seguro que HTTP? a) Sim b) Não → a</p>\n<p class=\"q\">Q: Cookies servem para? a) Armazenar dados do site b) Vírus → a</p>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "informatica_extra_3",
+    "title": "Segurança da informação",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Segurança da informação</h3>\n<p>Proteção de dados. Princípios: Confidencialidade, Integridade, Disponibilidade (CID).</p>\n<p class=\"ex\">Ex: Antivírus protege contra malware.</p>\n<p class=\"ex\">Ex: Firewall filtra conexões de rede.</p>\n<p class=\"ex\">Ex: Phishing = e-mail falso tentando roubar dados.</p>\n<p class=\"ex\">Ex: Ransomware = sequestra arquivos e pede resgate.</p>\n<p class=\"q\">Q: Phishing é? a) E-mail falso b) Antivírus → a</p>\n<p class=\"q\">Q: Firewall serve para? a) Filtrar rede b) Editar texto → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> Qual malware criptografa arquivos e exige pagamento? <br/>Resposta: Ransomware.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "informatica_extra_4",
+    "title": "Editores de texto e planilhas",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Editores de texto e planilhas</h3>\n<p>Word/Writer (textos) e Excel/Calc (planilhas com fórmulas).</p>\n<p class=\"ex\">Ex: Ctrl+C = copiar; Ctrl+V = colar; Ctrl+Z = desfazer.</p>\n<p class=\"ex\">Ex: Excel: =SOMA(A1:A10) soma células de A1 a A10.</p>\n<p class=\"ex\">Ex: Excel: =MÉDIA(B1:B5) calcula a média.</p>\n<p class=\"ex\">Ex: Excel: =SE(A1&gt;10;\"Sim\";\"Não\") → condição.</p>\n<p class=\"q\">Q: =SOMA(A1:A3) com A1=2, A2=3, A3=5? a) 10 b) 8 → a</p>\n<p class=\"q\">Q: Ctrl+Z faz? a) Desfazer b) Colar → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> No Excel, =CONT.SE(A1:A5;\"&gt;3\") com valores 1,4,2,5,3. Resultado? <br/>Conta valores &gt;3: 4 e 5 → Resposta: 2.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "informatica_extra_5",
+    "title": "Conceitos de internet e redes",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Conceitos de internet e redes</h3>\n<p>Internet = rede mundial. Conceitos: IP, DNS, e-mail, nuvem, Wi-Fi, banda larga.</p>\n<p class=\"ex\">Ex: IP = endereço do computador na rede (ex: 192.168.0.1).</p>\n<p class=\"ex\">Ex: DNS = traduz nomes (google.com) para IPs.</p>\n<p class=\"ex\">Ex: Computação em nuvem = Google Drive, OneDrive (armazenamento remoto).</p>\n<p class=\"q\">Q: DNS traduz? a) Nomes em IPs b) Vírus em antivírus → a</p>\n<p class=\"q\">Q: Nuvem permite? a) Guardar arquivos online b) Imprimir → a</p>\n</div>",
+    "questions": []
+  }
+]
