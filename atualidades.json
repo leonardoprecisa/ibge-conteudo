@@ -1,1 +1,50 @@
-
+[
+  {
+    "id": "atualidades_extra_1",
+    "title": "Censo 2022 e dados populacionais",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Censo 2022 e dados populacionais</h3>\n<p>IBGE realiza o Censo Demográfico. Censo 2022 mostrou ~203 milhões de habitantes.</p>\n<p class=\"ex\">Ex: Brasil = ~203 milhões (Censo 2022).</p>\n<p class=\"ex\">Ex: Sudeste continua a região mais populosa.</p>\n<p class=\"ex\">Ex: Crescimento populacional desacelerou em relação ao Censo 2010.</p>\n<p class=\"q\">Q: Censo mede? a) População b) Carros → a</p>\n<p class=\"q\">Q: Região mais populosa? a) Sudeste b) Norte → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> O Censo 2022 revelou que a população brasileira cresceu menos que o esperado. Isso indica: <br/>Resposta: Queda na taxa de fecundidade e transição demográfica avançada.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "atualidades_extra_2",
+    "title": "Biomas e Amazônia",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Biomas e Amazônia</h3>\n<p>6 biomas: Amazônia, Cerrado, Mata Atlântica, Caatinga, Pampa, Pantanal. Desmatamento é tema recorrente.</p>\n<p class=\"ex\">Ex: Amazônia = maior floresta tropical do mundo.</p>\n<p class=\"ex\">Ex: Cerrado = savana brasileira, 2º maior bioma.</p>\n<p class=\"ex\">Ex: Mata Atlântica = restam ~12% da cobertura original.</p>\n<p class=\"q\">Q: Quantos biomas o Brasil tem? a) 6 b) 3 → a</p>\n<p class=\"q\">Q: Principal bioma do Norte? a) Amazônia b) Cerrado → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> Qual bioma brasileiro mais ameaçado pelo desmatamento histórico? <br/>Resposta: Mata Atlântica (restam apenas cerca de 12%).</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "atualidades_extra_3",
+    "title": "Economia regional e agronegócio",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Economia regional e agronegócio</h3>\n<p>Brasil é potência agrícola. Centro-Oeste lidera soja e gado. Sudeste concentra indústria e serviços.</p>\n<p class=\"ex\">Ex: Soja = principal produto de exportação agrícola.</p>\n<p class=\"ex\">Ex: Centro-Oeste = celeiro do Brasil (MT, GO, MS).</p>\n<p class=\"ex\">Ex: Nordeste tem polo de fruticultura irrigada (Vale do São Francisco).</p>\n<p class=\"q\">Q: Maior produtor de soja? a) Centro-Oeste b) Sul → a</p>\n<p class=\"q\">Q: PIB brasileiro é liderado por? a) Setor terciário b) Agricultura → a</p>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "atualidades_extra_4",
+    "title": "Urbanização e migração",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Urbanização e migração</h3>\n<p>Brasil é ~85% urbano. Êxodo rural aconteceu forte entre 1950-1980. Problemas: favelização, trânsito, saneamento.</p>\n<p class=\"ex\">Ex: São Paulo = maior metrópole da América do Sul.</p>\n<p class=\"ex\">Ex: Êxodo rural = migração campo → cidade.</p>\n<p class=\"ex\">Ex: Problemas urbanos: falta de moradia, transporte, violência.</p>\n<p class=\"q\">Q: Brasil é mais? a) Urbano b) Rural → a</p>\n<p class=\"q\">Q: Êxodo rural = migração de? a) Campo para cidade b) Cidade para campo → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> O que é macrocefalia urbana? <br/>Resposta: Quando uma cidade concentra funções e população de forma desproporcional em relação às demais (ex: São Paulo).</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "atualidades_extra_5",
+    "title": "Sustentabilidade e mudanças climáticas",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Sustentabilidade e mudanças climáticas</h3>\n<p>Aquecimento global, efeito estufa, energias renováveis, acordos internacionais (Paris, COP).</p>\n<p class=\"ex\">Ex: Efeito estufa = gases (CO₂) retêm calor na atmosfera.</p>\n<p class=\"ex\">Ex: Brasil tem matriz energética ~83% renovável (hidrelétrica, eólica, solar).</p>\n<p class=\"ex\">Ex: Acordo de Paris = limitar aquecimento a 1,5°C.</p>\n<p class=\"q\">Q: Efeito estufa é causado por? a) Gases como CO₂ b) Chuva → a</p>\n<p class=\"q\">Q: Energia eólica vem do? a) Vento b) Sol → a</p>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "atualidades_extra_6",
+    "title": "Pesquisas IBGE (PNAD, PIM, PMC)",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Pesquisas IBGE (PNAD, PIM, PMC)</h3>\n<p>IBGE realiza diversas pesquisas além do Censo. PNAD (trabalho/renda), PIM (indústria), PMC (comércio).</p>\n<p class=\"ex\">Ex: PNAD Contínua = mede desemprego trimestralmente.</p>\n<p class=\"ex\">Ex: PIM = Pesquisa Industrial Mensal (produção fabril).</p>\n<p class=\"ex\">Ex: PMC = Pesquisa Mensal do Comércio (vendas no varejo).</p>\n<p class=\"ex\">Ex: IPCA = índice oficial de inflação (medido pelo IBGE).</p>\n<p class=\"q\">Q: PNAD mede? a) Emprego e renda b) Clima → a</p>\n<p class=\"q\">Q: IPCA mede? a) Inflação b) Exportação → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> Qual pesquisa do IBGE mede a taxa de desocupação no Brasil? <br/>Resposta: PNAD Contínua (Pesquisa Nacional por Amostra de Domicílios Contínua).</div>\n</div>",
+    "questions": []
+  }
+]
