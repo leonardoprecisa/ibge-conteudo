@@ -1287,13 +1287,15 @@ const subjects = [
     }
 
     // ============ INITIALIZATION ============
-    document.getElementById('subjectSelect').addEventListener('change', async (e) => {
-      currentSubjectId = e.target.value;
-      activeSectionId = null;
-      stopReading();
-      await loadSubjectFromGitHub(currentSubjectId);
-      renderContent();
-    });
+    document.getElementById('subjectSelect.addEventListener('change', async (e) => {
+  currentSubjectId = e.target.value;
+  activeSectionId = null;
+  stopReading();
+
+  await loadSubjectFromGitHub(currentSubjectId);
+
+  renderContent();
+});
 
     document.getElementById('chapterDropdownToggle').addEventListener('click', (e) => {
       e.stopPropagation();
@@ -1339,15 +1341,18 @@ async function loadSubjectFromGitHub(subjectId) {
 }
 
 
-function init() {
-      currentSubjectId = "portugues";
-      loadSubjectFromGitHub(currentSubjectId).then(() => {
+async function init() {
+  applyTheme();
+  setFontSize(state.fontSize);
+  renderSubjectSelect();
 
-      applyTheme();
-      setFontSize(state.fontSize);
-      renderSubjectSelect();
-      renderContent();
-    }
+  currentSubjectId = "portugues";
+  subjectSelect.value = "portugues";
+
+  await loadSubjectFromGitHub(currentSubjectId);
+
+  renderContent();
+}
 
     init();
   </script>
