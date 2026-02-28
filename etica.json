@@ -1,1 +1,42 @@
-
+[
+  {
+    "id": "etica_extra_1",
+    "title": "Código de Ética do Servidor Público (Decreto 1.171/94)",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Código de Ética do Servidor Público (Decreto 1.171/94)</h3>\n<p>Regras de conduta moral para servidores. Dignidade, decoro, zelo e eficácia.</p>\n<p class=\"ex\">Ex: Servidor deve ser honesto, leal e ter boa conduta.</p>\n<p class=\"ex\">Ex: A moralidade é tão importante quanto a legalidade.</p>\n<p class=\"ex\">Ex: Tratar o cidadão com cortesia e atenção.</p>\n<p class=\"q\">Q: Servidor pode aceitar presente de empresa? a) Sim b) Não → b</p>\n<p class=\"q\">Q: Servidor deve atender com? a) Má vontade b) Cortesia → b</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> Segundo o Decreto 1.171, a moralidade administrativa: <br/>Resposta: Constitui pressuposto de validade de todo ato da administração pública.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "etica_extra_2",
+    "title": "Princípios da Administração Pública (LIMPE)",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Princípios da Administração Pública (LIMPE)</h3>\n<p>Art. 37 da CF: Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência.</p>\n<p class=\"ex\">Ex: Legalidade = só pode fazer o que a lei permite.</p>\n<p class=\"ex\">Ex: Impessoalidade = tratar todos iguais, sem favoritismo.</p>\n<p class=\"ex\">Ex: Publicidade = atos devem ser públicos e transparentes.</p>\n<p class=\"ex\">Ex: Eficiência = fazer bem feito com menor custo.</p>\n<p class=\"q\">Q: LIMPE são os princípios da? a) Administração Pública b) Empresas privadas → a</p>\n<p class=\"q\">Q: Impessoalidade = ? a) Tratar todos iguais b) Privilegiar amigos → a</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> Qual princípio obriga a divulgação dos atos administrativos? <br/>Resposta: Publicidade.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "etica_extra_3",
+    "title": "Deveres do servidor público",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Deveres do servidor público</h3>\n<p>Obrigações que o servidor deve cumprir no exercício da função.</p>\n<p class=\"ex\">Ex: Ser assíduo e pontual.</p>\n<p class=\"ex\">Ex: Tratar com urbanidade (educação) as pessoas.</p>\n<p class=\"ex\">Ex: Exercer suas atribuições com rapidez, perfeição e rendimento.</p>\n<p class=\"ex\">Ex: Zelar pela economia do material público.</p>\n<p class=\"q\">Q: Dever do servidor? a) Ser pontual b) Chegar quando quiser → a</p>\n<p class=\"q\">Q: Urbanidade significa? a) Educação b) Grosseria → a</p>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "etica_extra_4",
+    "title": "Proibições do servidor público",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Proibições do servidor público</h3>\n<p>Condutas vedadas ao servidor sob pena de sanção.</p>\n<p class=\"ex\">Ex: Proibido usar cargo para proveito pessoal.</p>\n<p class=\"ex\">Ex: Proibido receber propina, presente ou vantagem indevida.</p>\n<p class=\"ex\">Ex: Proibido ser conivente com erro ou infração.</p>\n<p class=\"ex\">Ex: Proibido prejudicar deliberadamente a reputação de outro servidor.</p>\n<p class=\"q\">Q: Servidor pode usar cargo para benefício próprio? a) Sim b) Não → b</p>\n<p class=\"q\">Q: Aceitar propina é? a) Permitido b) Proibido → b</p>\n<div class=\"resolvida\"><strong>Questão resolvida:</strong> Servidor que aceita presente de particular interessado em decisão oficial comete: <br/>Resposta: Infração ética, podendo sofrer censura pela Comissão de Ética.</div>\n</div>",
+    "questions": []
+  },
+  {
+    "id": "etica_extra_5",
+    "title": "Comissão de Ética",
+    "resumo": "",
+    "resumoPlus": "",
+    "content": "<div class=\"topico\">\n<h3>Comissão de Ética</h3>\n<p>Cada órgão tem uma Comissão de Ética que aplica o Código de Ética e orienta servidores.</p>\n<p class=\"ex\">Ex: Composta por 3 membros titulares e 3 suplentes.</p>\n<p class=\"ex\">Ex: Pode aplicar pena de censura (a mais branda).</p>\n<p class=\"ex\">Ex: Funciona como órgão consultivo e de orientação.</p>\n<p class=\"q\">Q: Pena que a Comissão de Ética aplica? a) Demissão b) Censura → b</p>\n<p class=\"q\">Q: Quantos membros titulares? a) 3 b) 5 → a</p>\n</div>",
+    "questions": []
+  }
+]
